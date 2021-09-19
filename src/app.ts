@@ -12,7 +12,7 @@ async function  bootstrap() {
     const app = express();
     app.use(express.json())
     app.use("/api/v1",userRouter(mongoClient.db(env.DATABASE_NAME)))
-    app.listen(process.env.PORT || 3000,()=>console.log("RUNNING APP"))
+    app.listen(process.env.PORT || 3000,()=>console.log(`RUNNING APP ON PORT ${process.env.PORT}`))
     console.debug(env)
     return "Well"
 }

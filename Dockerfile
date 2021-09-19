@@ -22,7 +22,7 @@ FROM node:14.2.0-alpine3.11
 WORKDIR /root/src/app
 #copy fron stage to real app
 COPY --from=stage /root/stage/src/package*.json /root/src/app
-COPY --from=stage /root/stage/src/dist /root/src/app
+COPY --from=stage /root/stage/src/dist /root/src/app/dist
 #install dependeces for prod
 RUN npm ci
 #port to expose the application
